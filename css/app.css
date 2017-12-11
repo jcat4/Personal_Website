@@ -4,7 +4,9 @@
 }
 
 .pic-mask {
-  background-color: yellow;
+  background-image: url('https://www.pets4homes.co.uk/images/articles/3047/large/how-to-recognise-taurine-deficiencies-in-kittens-55a154abb4fbc.jpg');
+  background-repeat: no-repeat;
+  background-position: center; 
   min-height: 250px;
 }
 
@@ -66,5 +68,13 @@
   
   .pic-mask {
     height: 30vh;
+  }
+  
+  .shortcut-sqr {
+    width: 70%;
+    padding-top: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
   }
 }
