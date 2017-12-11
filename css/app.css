@@ -1,0 +1,70 @@
+.top-bar {
+  background-color: black;
+  min-height: 50px;
+}
+
+.pic-mask {
+  background-color: yellow;
+  min-height: 250px;
+}
+
+.grid-wrap {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.three-col-grid:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.shortcut-sqr {
+  min-width: 150px;
+}
+
+.git-shortcut {
+  background-color: red;
+}
+
+.sundae-shortcut {
+  background-color: blue;
+}
+
+.linkedin-shortcut {
+  background-color: green;
+}
+
+/* Desktop */
+@media (min-width: 600px) {
+  .top-bar {
+    height: 10vh;
+  }
+  
+  .pic-mask {
+    height: 50vh;
+  }
+  
+  .shortcut-sqr {
+    float: left;
+    position: relative;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    width: calc((100% - 10vw * 3) / 3);
+    padding-top: calc((100% - 10vw * 3) / 3);
+  }
+}
+
+/* Mobile */
+@media (max-width: 599px) {
+  .top-bar {
+    height: 8vh;
+  }
+  
+  .pic-mask {
+    height: 30vh;
+  }
+}
