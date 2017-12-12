@@ -1,12 +1,25 @@
+/* TODO
+*  - fix mail icon scaling with width
+*  - revise placement of mail icon, esp on mobile
+* - a bunch of other shit since all my shit got lost
+*/
+
 .top-bar {
   background-color: rgb(50, 50, 50);
   min-height: 50px;
+}
+
+.contact {
+  padding-left: 95%;
+  height: 90%;
 }
 
 .pic-mask {
   background-image: url('https://www.pets4homes.co.uk/images/articles/3047/large/how-to-recognise-taurine-deficiencies-in-kittens-55a154abb4fbc.jpg');
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+  resize: both;
   min-height: 250px;
   box-shadow: 0 1em 0 rgba(20, 20, 20, 0.2);
   -webkit-box-shadow: 0 1em 0 rgba(20, 20, 20, 0.2);
