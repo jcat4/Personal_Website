@@ -6,10 +6,10 @@
 .pic-mask {
   background-image: url('https://www.pets4homes.co.uk/images/articles/3047/large/how-to-recognise-taurine-deficiencies-in-kittens-55a154abb4fbc.jpg');
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
   min-height: 250px;
   box-shadow: 0 1em 0 rgba(20, 20, 20, 0.2);
-  -webkit-box-shadow: 0 1em 0 rgba(20, 20, 20, 0.2);    
+  -webkit-box-shadow: 0 1em 0 rgba(20, 20, 20, 0.2);
   -moz-box-shadow: 0 1em 0 rgba(20, 20, 20, 0.2);
 }
 
@@ -29,8 +29,13 @@
   min-width: 150px;
   border-radius: 0.4em;
   box-shadow: 1em 1em 0 rgba(20, 20, 20, 0.2);
-  -webkit-box-shadow: 1em 1em 0 rgba(20, 20, 20, 0.2);    
+  -webkit-box-shadow: 1em 1em 0 rgba(20, 20, 20, 0.2);
   -moz-box-shadow: 1em 1em 0 rgba(20, 20, 20, 0.2);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  /*font-size: 10vw; */
 }
 
 .git-shortcut {
@@ -46,50 +51,66 @@
 }
 
 /* Desktop */
+
 @media (min-width: 600px) {
-   .grid-wrap {
+  .grid-wrap {
     margin-top: 10vh;
     margin-bottom: 10vh;
+  }
+  .shortcut-img {
+    width: 80%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  
+  .git-shortcut .shortcut-img {
+    width: 80%;
+    padding-top: 15%;
+    padding-bottom: 0;
   }
   
   .top-bar {
     height: 10vh;
   }
-  
   .pic-mask {
     height: 50vh;
   }
-  
   .shortcut-sqr {
     float: left;
     position: relative;
-    margin-right: 5vw;
-    margin-left: 5vw;
-    width: calc((100% - 10vw * 3) / 3);
-    padding-top: calc((100% - 10vw * 3) / 3);
+    margin-right: calc((100% - 25vw * 3) / 6);
+    margin-left: calc((100% - 25vw * 3) / 6);
+    /*width: calc((100% - 10vw * 3) / 3);
+    height: calc((100% - 10vw * 3) / 3);;*/
+    height: 25vw;
+    width: 25vw;
   }
 }
 
 /* Mobile */
+
 @media (max-width: 599px) {
   .grid-wrap {
     /* set margin stuff for phone */
     margin-bottom: 5vh;
   }
-  
   .top-bar {
     height: 8vh;
   }
-  
   .pic-mask {
     height: 30vh;
   }
-  
   .shortcut-sqr {
     width: 80%;
-    padding-top: 80%;
+    height: auto;
+    min-height: 20vh;
     margin-left: auto;
     margin-right: auto;
     margin-top: 5vh;
+  }
+  .shortcut-img {
+    width: 80%;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
 }
