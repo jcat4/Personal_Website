@@ -19,7 +19,7 @@
 
 .contact-div {
   background-color: green;
-  z-index: 30;
+  z-index: 2;
   min-height: 250px;
   position: absolute;
 }
@@ -32,7 +32,6 @@
 .parallax_base {
   transform: translateZ(0);
   position: relative;
-  z-index: 1;
 }
 
 .parallax_back {
@@ -44,6 +43,7 @@
 .top-bar {
   background-color: rgb(50, 50, 50);
   min-height: 50px;
+  z-index: 5;
 }
 
 .contact {
@@ -58,6 +58,7 @@
   background-size: cover;
   resize: both;
   min-height: 250px;
+  z-index: 1;
 }
 
 .below-mask {
@@ -65,6 +66,7 @@
   box-shadow: 0 -1em 0 rgb(207, 207, 207);
   -webkit-box-shadow: 0 -1em 0 rgb(207, 207, 207);
   -moz-box-shadow: 0 -1em 0 rgb(207, 207, 207);
+  z-index: 1;
 }
 
 .grid-wrap {
@@ -157,6 +159,9 @@
     height: calc((100% - 10vw * 3) / 3);;*/
     height: 25vw;
     width: 25vw;
+  }
+  .shortcut-sqr:hover {
+    cursor: pointer;
   }
   .shortcut-sqr:hover .shortcut-img {
     transform: translate3d(0px, 25vw, 0px);
