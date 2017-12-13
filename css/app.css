@@ -167,6 +167,7 @@
   .shortcut-text {
     line-height: 25vw;
     width: 100%;
+    font-weight: 100;
   }
 }
 
