@@ -9,6 +9,7 @@ $(document).ready(function() {
 $(".contact").on("click", function() {
   if (window.matchMedia('(min-width: 600px)').matches) {
     $(".contact-div").toggleClass("contact-collapsed");
+    $(".inner-contact").toggleClass("hidden");
   } else {
     alert("You on mobile, do thing");
   }
