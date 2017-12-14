@@ -130,21 +130,32 @@ body {
 
 .my-work-div {
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-bottom: 5vh;
-  background-color: green;
+  /*background-color: green;*/
 }
 
 .meme-express-div {
   background-color: purple;
 }
 
+.work-title-div {
+  background-color: rgb(250, 250, 250);
+}
+
+.work-wrap-div {
+ /* background-color: yellow;*/
+}
+
 .shf-div {
   background-color: red;
 }
+
 .other-div {
   background-color: yellow;
 }
+
+/* ========================================================= */
 
 /* Desktop */
 
@@ -245,19 +256,33 @@ body {
     height: 100%;
     width: 40vw;
   }
-  .shf-div, .other-div {
+  .work-title-div,
+  .work-wrap-div {
     height: calc(50% - 1.5em);
     width: calc(100% - (3em + 40vw));
     right: 1em;
     position: absolute;
   }
-  .shf-div {
-    top: 1em;   
+  .work-title-div {
+    top: 1em;
   }
-  .other-div {
+  .work-wrap-div {
     bottom: 1em;
   }
+  .shf-div, .other-div {
+    height: 100%;
+    position: absolute;
+    width: calc(50% - 0.5em)
+  }
+  .shf-div {
+    left: 0;
+  }
+  .other-div {
+    right: 0;
+  }
 }
+
+/* ========================================================= */
 
 /* Mobile */
 
@@ -299,5 +324,5 @@ body {
     height: 200vh;
   }
   .meme-express-div {}
-  .shf-div {}
+  .work-title-div {}
 }
