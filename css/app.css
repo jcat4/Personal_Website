@@ -1,10 +1,9 @@
 /* TODO
-*  - fix mail icon scaling with width
+*  - fix mail icon scaling with width ?
 *  - revise placement of mail icon, esp on mobile
-*  - parallax scrolling
 *  - responsive images for banner
-*  - animation for shortcut icons
 *  - contact stuff
+*  - Do mobile contact stuff
 */
 
 .viewport {
@@ -23,7 +22,7 @@
 }
 
 .contact-div {
-  background-color: green;
+  background-color: rgb(50, 50, 50);;
   z-index: 2;
   min-height: 250px;
   position: absolute;
@@ -53,8 +52,9 @@
 
 .contact {
   padding-left: 95%;
-  height: 90%;
+  float: right;
   transition: 0.6s;
+  color: white;
 }
 
 .pic-mask {
@@ -98,8 +98,6 @@
   text-align: center;
   color: white;
   overflow: hidden;
-  /* I think this is good */
-  /*font-size: 10vw; */
 }
 
 .git-shortcut {
@@ -132,7 +130,17 @@
   .contact-div {
     width: 100%;
     height: 55vh;
-    top: -55vh;
+    transition-timing-function: ease-in-out;
+    transition: 0.3s;
+    transform: translatey(-55vh);
+  }
+  .contact-collapsed {
+    transform: translatey(0) !important;
+  }
+  .contact:hover {
+    fill: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2)
   }
   .pic-mask {
     height: 55vh;
@@ -166,19 +174,17 @@
     height: 25vw;
     width: 25vw;
   }
-  .shortcut-sqr:hover {
+  .shortcut-sqr:hover,
+  .shortcut-sqr *:hover {
     cursor: pointer;
   }
-  .shortcut-sqr:hover .shortcut-img {
-    transform: translate3d(0px, 25vw, 0px);
-  }
-  .shortcut-sqr:hover .shortcut-text {
+  .shortcut-sqr:hover * {
     transform: translate3d(0px, 25vw, 0px);
   }
   .shortcut-text {
     line-height: 25vw;
     width: 100%;
-    font-weight: 100;
+    font-weight: 400;
   }
 }
 
