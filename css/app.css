@@ -156,6 +156,14 @@ body {
     height: 100%;
     transition-timing-function: ease-in-out;
     transition: 0.8s;
+    vertical-align: middle;
+  }
+  .contact-header {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-size: 4em;
+    padding-top: 9vh;
   }
   .captcha,
   .captcha * {
@@ -163,7 +171,7 @@ body {
     transform-origin: 50% 50%;
     display: table;
     margin: 0 auto;
-    padding-top: 5%;
+    padding-top: 1vh;
   }
   .pic-mask {
     height: 55vh;
