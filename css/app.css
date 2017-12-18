@@ -29,7 +29,7 @@
 	font-family: "Montserrat", "Helvetica Neue", "Helvetica,Arial", "sans-serif";
 }
 
-.head-text {
+.head-text-div {
 	margin-top: 2.5vh;
 	font-family: "Lato", "Helvetica Neue", "Helvetica, Arial", "sans-serif";
 }
@@ -64,20 +64,49 @@
 		-ms-transform: scale(0);
 		-o-transform: scale(0);
 		transform: scale(0);
+		
+		-webkit-transition: 0.2s ease-in-out;
+		-moz-transition: 0.2s ease-in-out;
+		-o-transition: 0.2s ease-in-out;
+		transition: 0.2s ease-in-out;
+	}
+	.break {
+		border-top: solid 0.75vh;
+		max-width: 18vw;
+		width: 0;
+		
 		-webkit-transition: 0.25s ease-in-out;
 		-moz-transition: 0.25s ease-in-out;
 		-o-transition: 0.25s ease-in-out;
 		transition: 0.25s ease-in-out;
 	}
-	.break {
-		border-top: solid 0.75vh;
-		max-width: 18vw;
+	
+	.temp-add-msg {
+		opacity: 0;
+		
+		-webkit-transition: 0.5s ease-in-out;
+		-moz-transition: 0.5s ease-in-out;
+		-o-transition: 0.5s ease-in-out;
+		transition: 0.5s ease-in-out;
+	}
+	
+	.head-text {
+		padding-top: 100%;
+		-webkit-transition: 0.5s ease-in-out;
+		-moz-transition: 0.5s ease-in-out;
+		-o-transition: 0.5s ease-in-out;
+		transition: 0.5s ease-in-out;
+		display: inline-block;
 	}
 	.main-sub-text {
 		font-size: 3.5vh;
+		overflow-y: hidden;
+		max-height: 5.2vh;
 	}
 	.main-head-text {
 		font-size: 8.5vh;
+		overflow-y: hidden;
+		max-height: 12.5vh;
 	}
 }
 
