@@ -5,7 +5,7 @@
 	text-align: center;
 }
 
-.portrait {
+.portrait-wrap {
 	margin: 0 auto;
 }
 
@@ -26,34 +26,25 @@
 
 .main-head-text {
 	font-weight: 700;
-	font-family: "Montserrat",
-		"Helvetica Neue",
-		"Helvetica,Arial",
-		"sans-serif";
+	font-family: "Montserrat", "Helvetica Neue", "Helvetica,Arial", "sans-serif";
 }
 
 .head-text {
 	margin-top: 2.5vh;
-	font-family: "Lato", 
-		"Helvetica Neue", 
-		"Helvetica, Arial", 
-		"sans-serif";
+	font-family: "Lato", "Helvetica Neue", "Helvetica, Arial", "sans-serif";
 }
 
 .break {
 	padding: 0;
-    border: none;
-    text-align: center;
-    border-color: white;
-    color: white;
+	border: none;
+	text-align: center;
+	border-color: white;
+	color: white;
 }
 
 .main-sub-text {
 	font-weight: 800;
-	font-family: "Lato", 
-		"Helvetica Neue", 
-		"Helvetica, Arial", 
-		"sans-serif";
+	font-family: "Lato", "Helvetica Neue", "Helvetica, Arial", "sans-serif";
 }
 
 /* ========================================================= */
@@ -61,19 +52,30 @@
 /* Desktop */
 
 @media (min-width: 600px) {
-	.portrait {
-		width: 35%;
+	.portrait-wrap {
+		max-width: 20vw;
+		width: 20vw;
+		height: 20vw;
 	}
-
+	.portrait {
+		max-width: 100%;
+		-webkit-transform: scale(0);
+		-moz-transform: scale(0);
+		-ms-transform: scale(0);
+		-o-transform: scale(0);
+		transform: scale(0);
+		-webkit-transition: 0.25s ease-in-out;
+		-moz-transition: 0.25s ease-in-out;
+		-o-transition: 0.25s ease-in-out;
+		transition: 0.25s ease-in-out;
+	}
 	.break {
 		border-top: solid 0.75vh;
 		max-width: 18vw;
 	}
-
 	.main-sub-text {
 		font-size: 3.5vh;
 	}
-
 	.main-head-text {
 		font-size: 8.5vh;
 	}
@@ -84,20 +86,21 @@
 /* Mobile */
 
 @media (max-width: 599px) {
-	.portrait {
-		width: 70%;
+	.portrait-wrap {
+		width: 70vw;
+		height: 70vw;
 	}
-
+	.portrait {
+		width: 100%;
+	}
 	.break {
 		border-top: solid 0.5vh;
 		max-width: 50vw;
 	}
-
 	.main-sub-text {
 		font-size: 2.75vh;
 		max-width: 80vw;
 	}
-
 	.main-head-text {
 		font-size: 9.5vw;
 	}
