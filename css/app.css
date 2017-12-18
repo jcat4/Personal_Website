@@ -34,13 +34,17 @@
 
 .head-text {
 	margin-top: 2.5vh;
+	font-family: "Lato", 
+		"Helvetica Neue", 
+		"Helvetica, Arial", 
+		"sans-serif";
 }
 
 .break {
 	padding: 0;
     border: none;
     text-align: center;
-    border-color: #fff;
+    border-color: white;
 }
 
 .main-sub-text {
