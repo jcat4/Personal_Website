@@ -1,18 +1,99 @@
 .top-div {
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	background-color: #5fc4b6;
 	text-align: center;
 }
 
 .portrait {
-	width: 25%;
-	padding-top: 5%;
 	margin: 0 auto;
 }
-
 
 .clip-circle {
 	clip-path: circle(15em at center);
 	background-color: white;
+}
+
+.top-div {
+	color: white;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.head {
+	display: inline-block;
+}
+
+.main-head-text {
+	font-weight: 700;
+	font-family: "Montserrat",
+		"Helvetica Neue",
+		"Helvetica,Arial",
+		"sans-serif";
+}
+
+.head-text {
+	margin-top: 2.5vh;
+}
+
+.break {
+	padding: 0;
+    border: none;
+    text-align: center;
+    border-color: #fff;
+}
+
+.main-sub-text {
+	font-weight: 800;
+	font-family: "Lato", 
+		"Helvetica Neue", 
+		"Helvetica, Arial", 
+		"sans-serif";
+}
+
+/* ========================================================= */
+
+/* Desktop */
+
+@media (min-width: 600px) {
+	.portrait {
+		width: 35%;
+	}
+
+	.break {
+		border-top: solid 0.75vh;
+		max-width: 18vw;
+	}
+
+	.main-sub-text {
+		font-size: 3.5vh;
+	}
+
+	.main-head-text {
+		font-size: 8.5vh;
+	}
+}
+
+/* ========================================================= */
+
+/* Mobile */
+
+@media (max-width: 599px) {
+	.portrait {
+		width: 70%;
+	}
+
+	.break {
+		border-top: solid 0.5vh;
+		max-width: 50vw;
+	}
+
+	.main-sub-text {
+		font-size: 2.75vh;
+		max-width: 80vw;
+	}
+
+	.main-head-text {
+		font-size: 9.5vw;
+	}
 }
