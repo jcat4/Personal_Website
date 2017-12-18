@@ -65,20 +65,20 @@
 		-o-transform: scale(0);
 		transform: scale(0);
 		
-		-webkit-transition: 0.2s ease-in-out;
-		-moz-transition: 0.2s ease-in-out;
-		-o-transition: 0.2s ease-in-out;
-		transition: 0.2s ease-in-out;
+		-webkit-transition: 0.3s ease-in-out;
+		-moz-transition: 0.3s ease-in-out;
+		-o-transition: 0.3s ease-in-out;
+		transition: 0.3s ease-in-out;
 	}
 	.break {
 		border-top: solid 0.75vh;
 		max-width: 18vw;
 		width: 0;
 		
-		-webkit-transition: 0.25s ease-in-out;
-		-moz-transition: 0.25s ease-in-out;
-		-o-transition: 0.25s ease-in-out;
-		transition: 0.25s ease-in-out;
+		-webkit-transition: 0.4s ease-in-out;
+		-moz-transition: 0.4s ease-in-out;
+		-o-transition: 0.4s ease-in-out;
+		transition: 0.4s ease-in-out;
 	}
 	
 	.temp-add-msg {
