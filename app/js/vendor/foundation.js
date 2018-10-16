@@ -3415,7 +3415,7 @@ var Tabs = function (_Plugin) {
         }
       });
       if (this.options.matchHeight) {
-        var $images = this.$tabContent.find('img');
+        var $images = this.$tabContent.find('images');
 
         if ($images.length) {
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__foundation_util_imageLoader__["a" /* onImagesLoaded */])($images, this._setHeight.bind(this));
@@ -5842,7 +5842,7 @@ var Equalizer = function (_Plugin) {
         onPostEqualizedBound: this._onPostEqualized.bind(this)
       };
 
-      var imgs = this.$element.find('img');
+      var imgs = this.$element.find('images');
       var tooSmall;
       if (this.options.equalizeOn) {
         tooSmall = this._checkMQ();
@@ -7462,7 +7462,7 @@ var Orbit = function (_Plugin) {
       this.$wrapper = this.$element.find('.' + this.options.containerClass);
       this.$slides = this.$element.find('.' + this.options.slideClass);
 
-      var $images = this.$element.find('img'),
+      var $images = this.$element.find('images'),
           initActive = this.$slides.filter('.is-active'),
           id = this.$element[0].id || __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__foundation_util_core__["a" /* GetYoDigits */])(6, 'orbit');
 

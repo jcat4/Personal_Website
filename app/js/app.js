@@ -1,4 +1,4 @@
-$(document).foundation()
+$(document).foundation();
 
 $(document).ready(function() {
   // If Desktop, initiate animations
