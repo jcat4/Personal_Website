@@ -2,7 +2,7 @@
   "name": "personal_website",
   "version": "1.0.0",
   "description": "Muh personal website, boiiii",
-  "main": "index.html",
+  "main": "app/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jcat4/Personal_Website#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.2"
   }
