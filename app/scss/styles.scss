@@ -1,5 +1,6 @@
 $regular-blue: #5fc4b6;
 $red: #E74C3C;
+$pink: #ff8a8a;
 
 /* ============= CONTAINERS ============= */
 
@@ -19,6 +20,10 @@ $red: #E74C3C;
 
 .red-bg {
   background-color: $red;
+}
+
+.pink-bg {
+  background-color: $pink;
 }
 
 .portrait-wrap {

@@ -1,5 +1,6 @@
 WIP
 - make my image change based on month (and maybe day?)
+- Get another heart! Pref SVG. Figure out colors. Wink!
 
 TODO
 - add more particle effects (hearts for Feb, fireworks for Jan, etc.)
@@ -11,3 +12,4 @@ TODO
 - Look into revising portrait sizing, also do I really need the wrap anymore?
 - add loading screen that defers displaying incomplete content
 - figure out font optimization?
+- make sure comments ignored in build

@@ -4,12 +4,20 @@ $(document).ready(function() {
   var bgClass,
       portraitCls,
       currMonth = (new Date()).getMonth() + 1,
+      baseParticlePath = '/js/vendor/particle-configs/',
       particleJsConfig = null;
 
+      // currMonth = 2; // for testing
+
   switch (currMonth) {
+    case 2:
+      bgClass = 'pink-bg';
+      particleJsConfig = baseParticlePath + 'hearts.json';
+      portraitCls = 'default-me'; // todo add winking version!
+      break;
     case 12:
       bgClass = 'red-bg';
-      particleJsConfig = '/js/vendor/particle-configs/snow.json';
+      particleJsConfig = baseParticlePath + 'snow.json';
       portraitCls = 'default-me'; // todo add santa version!
       break;
     default:
