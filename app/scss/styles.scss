@@ -1,10 +1,21 @@
 $regular-blue: #5fc4b6;
+$red: #E74C3C;
+
+/* ============= CONTAINERS ============= */
 
 .top-div {
   width: 100vw;
   height: 100vh;
-  background-color: $regular-blue;
+  // background-color: $regular-blue;
   text-align: center;
+}
+
+.normal-bg {
+  background-color: $regular-blue;
+}
+
+.red-bg {
+  background-color: $red;
 }
 
 .portrait-wrap {
@@ -26,27 +37,41 @@ $regular-blue: #5fc4b6;
   display: inline-block;
 }
 
+/* ============= PARTICLE STUFF ============= */
+
+#particles-js canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ============= TEXT ============= */
+
 .main-head-text {
   font-weight: 700;
-  font-family: "Montserrat", "Helvetica Neue", "Helvetica,Arial", "sans-serif";
+  font-family: "Montserrat", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+.main-sub-text, .head-text-div {
+  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 }
 
 .head-text-div {
   margin-top: 2.5vh;
-  font-family: "Lato", "Helvetica Neue", "Helvetica, Arial", "sans-serif";
-}
-
-.break {
-  padding: 0;
-  border: none;
-  text-align: center;
-  border-color: white;
-  color: white;
 }
 
 .main-sub-text {
   font-weight: 800;
-  font-family: "Lato", "Helvetica Neue", "Helvetica, Arial", "sans-serif";
+}
+
+.break {
+  padding: 0;
+  margin: 15px auto;
+  border: none;
+  text-align: center;
+  border-color: white;
+  color: white;
 }
 
 /* ========================================================= */
