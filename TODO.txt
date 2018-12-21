@@ -1,9 +1,13 @@
+WIP
 - make my image change based on month (and maybe day?)
+
+TODO
 - add more particle effects (hearts for Feb, fireworks for Jan, etc.)
 - Improve typography (sizing)
 - Improve responsiveness (more media queries!)
 - cross-browser compatability testing\
 - add lil icons where "site under construction" message is (git, linkedin, anything else??)
-- AMBITIOUS, but maybe animations eventually?!
+- AMBITIOUS, but maybe portrait animations eventually?!
 - Look into revising portrait sizing, also do I really need the wrap anymore?
 - add loading screen that defers displaying incomplete content
+- figure out font optimization?
