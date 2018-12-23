@@ -31,6 +31,9 @@
 .default-me {
   background-image: url("../images/me-bubble.svg"); }
 
+.winking-me {
+  background-image: url("../images/me-winking.svg"); }
+
 .christmas-me {
   background-image: url("../images/me-santa.svg"); }
 

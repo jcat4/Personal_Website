@@ -15,3 +15,6 @@ TODO
 - figure out font optimization?
 - make sure comments ignored in build
 - add a favicon
+- fix fontawesome missing
+- fix particle configs not getting dumped in gulp output (also, try to minify?)
+- Look into why particleJS func doesn't work when minified?

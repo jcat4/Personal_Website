@@ -16,7 +16,7 @@ $(document).ready(function() {
     case 2:
       bgClass = 'pink-bg';
       particleJsConfig = baseParticlePath + 'hearts.json';
-      portraitCls = 'default-me'; // todo add winking version!
+      portraitCls = 'winking-me'; // todo add winking version!
       break;
     case 12:
       bgClass = 'red-bg';
