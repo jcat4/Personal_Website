@@ -117,4 +117,7 @@ typings/
 *.sass.map
 *.scss.map
 
+# Webstorm shit
+.idea/
+
 # End of https://www.gitignore.io/api/node,sass,macos
