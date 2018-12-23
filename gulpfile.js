@@ -7,7 +7,8 @@ const gulp = require('gulp'),
       cssnano = require('gulp-cssnano'),
       imagemin = require('gulp-imagemin'),
       cache = require('gulp-cache'),
-      del = require('del');
+      del = require('del'),
+      jsonminify = require('gulp-jsonminify');
 
 gulp.task('sass', function() {
     return gulp.src('app/scss/**/*.scss')
@@ -39,7 +40,13 @@ gulp.task('images', function(){
         .pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('build', ['sass', 'images'], function(){
+gulp.task('json', function () {
+    return gulp.src(['app/js/vendor/particle-configs/*.json'])
+        .pipe(jsonminify())
+        .pipe(gulp.dest('dist/js/vendor/particle-configs/'));
+});
+
+gulp.task('build', ['sass', 'images', 'json'], function(){
     return gulp.src('app/*.html')
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
