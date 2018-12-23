@@ -3,11 +3,14 @@ $(document).ready(function() {
   // set up conditional styling and components
   var bgClass,
       portraitCls,
-      currMonth = (new Date()).getMonth() + 1,
-      baseParticlePath = '/js/vendor/particle-configs/',
+      currMonth = (new Date()).getMonth() + 1;
+      
+  var baseParticlePath = '/js/vendor/particle-configs/',
       particleJsConfig = null;
 
-      // currMonth = 2; // for testing
+  var isMobile = /Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent);
+
+  // currMonth = 2; // for testing
 
   switch (currMonth) {
     case 2:
@@ -26,8 +29,8 @@ $(document).ready(function() {
       break;
   }
 
-  // will be set if particleJS is needed
-  if (particleJsConfig) {
+  // will be set if particleJS is needed (and not mobile)
+  if (particleJsConfig && !isMobile) {
     particlesJS.load('particles-js', particleJsConfig, function() {
       $('#particles-js').children().addClass(bgClass);
       console.log('callback - particles.js config loaded');

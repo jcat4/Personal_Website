@@ -84,7 +84,7 @@ $pink: #ff8a8a;
 
 .break {
   padding: 0;
-  margin: 15px auto;
+  margin: 20px auto;
   border: none;
   text-align: center;
   border-color: white;
@@ -102,9 +102,11 @@ $pink: #ff8a8a;
     width: 15em;
     height: 15em;
   }
+
   .portrait {
     max-width: 100%;
   }
+
   .break {
     border-top: solid 0.75vh;
     max-width: 12em;
@@ -113,6 +115,7 @@ $pink: #ff8a8a;
   .head-text {
     display: inline-block;
   }
+
   .main-sub-text {
     font-size: 1.25em;
     overflow-y: hidden;
