@@ -18,7 +18,7 @@ $(document).ready(function() {
     case 12:
       bgClass = 'red-bg';
       particleJsConfig = baseParticlePath + 'snow.json';
-      portraitCls = 'default-me'; // todo add santa version!
+      portraitCls = 'christmas-me';
       break;
     default:
       bgClass = 'normal-bg';

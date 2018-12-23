@@ -31,6 +31,9 @@
 .default-me {
   background-image: url("../images/me-bubble.svg"); }
 
+.christmas-me {
+  background-image: url("../images/me-santa.svg"); }
+
 .clip-circle {
   clip-path: circle(15em at center);
   background-color: white; }

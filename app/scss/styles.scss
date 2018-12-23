@@ -7,7 +7,6 @@ $pink: #ff8a8a;
 .top-div {
   width: 100vw;
   height: 100vh;
-  // background-color: $regular-blue;
   text-align: center;
   color: white;
   display: table-cell;
@@ -44,6 +43,10 @@ $pink: #ff8a8a;
 
 .default-me {
   background-image: url('../images/me-bubble.svg');
+}
+
+.christmas-me {
+  background-image: url('../images/me-santa.svg');
 }
 
 .clip-circle {
@@ -101,43 +104,13 @@ $pink: #ff8a8a;
   }
   .portrait {
     max-width: 100%;
-    //-webkit-transform: scale(0);
-    //-moz-transform: scale(0);
-    //-ms-transform: scale(0);
-    //-o-transform: scale(0);
-    //transform: scale(0);
-
-    //-webkit-transition: 0.3s ease-in-out;
-    //-moz-transition: 0.3s ease-in-out;
-    //-o-transition: 0.3s ease-in-out;
-    //transition: 0.3s ease-in-out;
   }
   .break {
     border-top: solid 0.75vh;
     max-width: 12em;
-    //width: 0;
-    //
-    //-webkit-transition: 0.4s ease-in-out;
-    //-moz-transition: 0.4s ease-in-out;
-    //-o-transition: 0.4s ease-in-out;
-    //transition: 0.4s ease-in-out;
-  }
-
-  .temp-add-msg {
-    //opacity: 0;
-    //
-    //-webkit-transition: 0.5s ease-in-out;
-    //-moz-transition: 0.5s ease-in-out;
-    //-o-transition: 0.5s ease-in-out;
-    //transition: 0.5s ease-in-out;
   }
 
   .head-text {
-    //padding-top: 100%;
-    //-webkit-transition: 0.5s ease-in-out;
-    //-moz-transition: 0.5s ease-in-out;
-    //-o-transition: 0.5s ease-in-out;
-    //transition: 0.5s ease-in-out;
     display: inline-block;
   }
   .main-sub-text {
