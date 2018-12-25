@@ -1,51 +1,59 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joey Cardosi's Site</title>
 
-    <!-- build:css css/styles.min.css -->
-    <link rel="stylesheet" href="css/vendor/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- endbuild -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joey Cardosi's Site</title>
 
-    <!-- todo make fonts optimizable via gulp -->
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-  </head>
-  <body>
+  <!-- build:css css/styles.min.css -->
+  <link rel="stylesheet" href="css/vendor/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- endbuild -->
 
-    <div id="particles-js"></div>
-    
-    <div class="top-div">
-        <div class="portrait-wrap">
-          <div class="portrait"></div>
-        </div>
-        <div class="head-text-div">
-          <div class="main-head-text">
-            <span class="head-text">Joseph Cardosi</span>
-          </div>
+  <!-- todo make fonts optimizable via gulp -->
+  <!-- Custom Fonts -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+</head>
 
-          <hr class="break"/>
-          <div class="main-sub-text">
-            <span class="head-text">Fullstack Developer &mdash; Wannabe Designer</span>
-          </div>
-          <!--<p class="temp-add-msg">Check back in soon!</p>-->
-        </div>
+<body>
 
+  <div class="load-div">
+    <div class="lds-ellipsis">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <div id="particles-js"></div>
+
+  <div class="top-div hidden">
+    <div class="portrait-wrap">
+      <div class="portrait"></div>
+    </div>
+    <div class="head-text-div">
+      <div class="main-head-text">
+        <span class="head-text">Joseph Cardosi</span>
+      </div>
+
+      <hr class="break" />
+      <div class="main-sub-text">
+        <span class="head-text">Fullstack Developer &mdash; Wannabe Designer</span>
+      </div>
     </div>
 
+  </div>
 
-    <!-- todo particeJS var doesn't work if minified? Debug -->
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <!-- build:js js/main.min.js -->
-    <script src="js/vendor/jquery-3.2.1.min.js"></script>
-    <script src="js/app.js" defer></script>
-    <!-- endbuild -->
-  </body>
+  <!-- build:js js/main.min.js -->
+  <script src="js/vendor/jquery-3.2.1.min.js"></script>
+  <script src="js/app.js" defer></script>
+  <!-- endbuild -->
+</body>
+
 </html>

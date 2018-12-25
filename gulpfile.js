@@ -33,7 +33,7 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
     gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
-gulp.task('images', function(){
+gulp.task('images', function() {
     return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
         .pipe(imagemin())
         .pipe(cache(imagemin()))
@@ -46,7 +46,7 @@ gulp.task('json', function () {
         .pipe(gulp.dest('dist/js/vendor/particle-configs/'));
 });
 
-gulp.task('build', ['sass', 'images', 'json'], function(){
+gulp.task('build', ['sass', 'images', 'json'], function() {
     return gulp.src('app/*.html')
         .pipe(useref())
         .pipe(gulpIf('*.js', uglify()))
