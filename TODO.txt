@@ -1,6 +1,7 @@
 WIP
 - make my image change based on month (and maybe day?)
 - Get another heart! Pref SVG. Figure out colors. Wink!
+- loading screen, currently not working the way I want
 
 TODO
 - add more particle effects (hearts for Feb, fireworks for Jan, etc.)
@@ -11,10 +12,7 @@ TODO
 - add lil icons where "site under construction" message is (git, linkedin, anything else??)
 - AMBITIOUS, but maybe portrait animations eventually?!
 - Look into revising portrait sizing, also do I really need the wrap anymore?
-- add loading screen that defers displaying incomplete content
 - figure out font optimization?
 - make sure comments ignored in build
-- add a favicon
-- fix fontawesome missing
-- fix particle configs not getting dumped in gulp output (also, try to minify?)
 - Look into why particleJS func doesn't work when minified?
+- Figure out why jquery gulp doesn't work if using cdn delivery?
