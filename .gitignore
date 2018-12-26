@@ -123,4 +123,7 @@ typings/
 # Favicon generator shit
 faviconData.json
 
+# Ignore prod builds
+dist/
+
 # End of https://www.gitignore.io/api/node,sass,macos
