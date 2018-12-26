@@ -16,3 +16,4 @@ TODO
 - make sure comments ignored in build
 - Look into why particleJS func doesn't work when minified?
 - Figure out why jquery gulp doesn't work if using cdn delivery?
+- look into debugging svg particle shit

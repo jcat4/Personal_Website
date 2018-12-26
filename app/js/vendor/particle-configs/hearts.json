@@ -20,7 +20,7 @@
         "nb_sides": 5
       },
       "image": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Love_Heart_SVG.svg/2000px-Love_Heart_SVG.svg.png",
+        "src": "images/particles/heart.png",
         "width": 100,
         "height": 100
       }

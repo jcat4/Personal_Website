@@ -10,7 +10,8 @@ const gulp = require('gulp'),
       del = require('del'),
       jsonminify = require('gulp-jsonminify'),
       realFavicon = require ('gulp-real-favicon'),
-      fs = require('fs');
+      fs = require('fs'),
+      merge = require('merge-stream');
       
 // File where the favicon markups are stored
 const FAVICON_DATA_FILE = 'faviconData.json';
@@ -39,10 +40,17 @@ gulp.task('watch', ['browserSync', 'sass'], function () {
 });
 
 gulp.task('images', function() {
-    return gulp.src('app/images/**/*.+(png|jpg|gif|svg)')
+    var baseImgs = gulp.src('app/images/*.+(png|jpg|gif|svg)')
         .pipe(imagemin())
         .pipe(cache(imagemin()))
-        .pipe(gulp.dest('dist/images'))
+        .pipe(gulp.dest('dist/images'));
+
+    var particleImgs = gulp.src('app/images/particles/*.+(png|jpg|gif|svg)')
+        .pipe(imagemin())
+        .pipe(cache(imagemin()))
+        .pipe(gulp.dest('dist/images/particles'));
+
+    return merge(baseImgs, particleImgs);
 });
 
 gulp.task('json', function () {

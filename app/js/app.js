@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   var isMobile = /Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent);
 
-  // currMonth = 2; // for testing
+  currMonth = 2; // for testing
 
   // set up conditional styling and components
   switch (currMonth) {
