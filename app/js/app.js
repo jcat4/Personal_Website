@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  var particleScript = 'http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
+  var particleScript = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
 
   var bgClass,
       portraitCls,
@@ -11,7 +11,7 @@ $(document).ready(function () {
 
   var isMobile = /Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent);
 
-  currMonth = 2; // for testing
+  // currMonth = 2; // for testing
 
   // set up conditional styling and components
   switch (currMonth) {
