@@ -17,7 +17,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@800&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@800&display=swap', async: true }
     ],
     htmlAttrs: {
       lang: "en"
