@@ -13,12 +13,15 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' } // TODO
+      { hid: 'description', name: 'description', content: "Joey's Personal Website!" } // TODO
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Montserrat:wght@800&display=swap' }
-    ]
+    ],
+    htmlAttrs: {
+      lang: "en"
+    },
   },
   /*
   ** Customize the progress-bar color
@@ -38,6 +41,7 @@ export default {
   ],
   /*
   ** Nuxt.js dev-modules
+
   */
   buildModules: [
     '@aceforth/nuxt-optimized-images'
@@ -113,6 +117,18 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    postcss: {
+      plugins: {
+        'postcss-import': {},
+        'postcss-url': {},
+        'postcss-preset-env': this.preset,
+        'cssnano': { preset: 'default' } // disabled in dev mode
+      },
+      order: 'presetEnvAndCssnanoLast',
+      preset: {
+        stage: 2
+      }
+    },
     extend (config, ctx) {
     }
   }
