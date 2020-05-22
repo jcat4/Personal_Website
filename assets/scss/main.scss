@@ -1,0 +1,95 @@
+@import "colors";
+
+// UTIL CLASSES
+
+.background-teal {
+  background-color: $teal;
+}
+
+.background-red {
+  background-color: $red;
+}
+
+.background-pink {
+  background-color: $pink;
+}
+
+// DOM CLASSES
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 300px;
+
+  color: white;
+  text-align: center;
+}
+
+.portrait {
+  width: 250px;
+}
+
+.main-head-text {
+  margin-top: 20px;
+  font-size: 40px;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+.fancy-break {
+  margin: 15px 0;
+  width: 200px;
+  border: none;
+  background-color: white;
+  height: 5px;
+}
+
+.main-sub-text {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+// MOBILE - TABLET TERRITORY
+
+@media(min-width: 350px) {
+  .portrait {
+    width: 300px;
+  }
+
+  .main-sub-text {
+    font-size: 17px;
+  }
+}
+
+@media(min-width: 450px) {
+  .portrait {
+    width: 400px;
+  }
+
+  .main-sub-text {
+    font-size: 20px;
+  }
+}
+
+// DESKTOP-ish TERRITORY
+
+@media(min-width: 600px) {
+  .portrait {
+    width: 275px;
+  }
+
+  .fancy-break {
+    height: 7px;
+  }
+
+  .main-head-text {
+    font-size: 52px;
+  }
+
+  .main-sub-text {
+    font-size: 20px;
+  }
+}

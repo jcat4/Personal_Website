@@ -1,72 +1,55 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        Personal_Website
-      </h1>
-      <h2 class="subtitle">
-        My personal website!
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="container" :class="mainBackgroundColor">
+    <img :src="portrait_pic_url" alt="My Self Portrait" class="portrait">
+    <h1 class="main-head-text">Joey Cardosi</h1>
+    <hr class="fancy-break">
+    <h5 class="main-sub-text">Fullstack Developer &mdash; Wannabe Designer</h5>
+    <!-- <h3 class="main-sub-text">Fullstack Developer</h3> -->
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+  export default {
+    data: function() {
+      return {
+        current_month: (new Date()).getMonth() + 1,
+        // current_month: 12,  // testing/debugging
+      }
+    },
+    computed: {
+      mainBackgroundColor: function() {
+        switch (this.current_month) {
+          case 2: // February
+            return "background-pink";
+          case 12: // December
+            return "background-red";
+          default:
+            return "background-teal";
+        }
+      },
+      portrait_pic_url: function() {
+        let filename;
 
-export default {
-  components: {
-    Logo
+        switch (this.current_month) {
+          case 2: // February
+            filename = "me-winking.svg";
+            break;
+          case 12: // December
+            filename = "me-santa.svg";
+            break;
+          default:
+            filename = "me.svg";
+        }
+
+        return require(`@/assets/images/${filename}`)
+      }
+    }
   }
-}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+  /* TESTING */
+  /* h3 {
+    font-size: 20px;
+  } */
 </style>
