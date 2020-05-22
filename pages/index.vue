@@ -4,7 +4,6 @@
     <h1 class="main-head-text">Joey Cardosi</h1>
     <hr class="fancy-break">
     <h5 class="main-sub-text">Fullstack Developer &mdash; Wannabe Designer</h5>
-    <!-- <h3 class="main-sub-text">Fullstack Developer</h3> -->
   </div>
 </template>
 
@@ -15,6 +14,10 @@
         current_month: (new Date()).getMonth() + 1,
         // current_month: 12,  // testing/debugging
       }
+    },
+    mounted: function() {
+      console.log('%cHow do you do, fellow developers?', 'font-size: 25px; color: purple; font-style: italic;');
+      console.log("https://i.imgur.com/f6pnUrS.jpg");
     },
     computed: {
       mainBackgroundColor: function() {
@@ -48,8 +51,4 @@
 </script>
 
 <style>
-  /* TESTING */
-  /* h3 {
-    font-size: 20px;
-  } */
 </style>
