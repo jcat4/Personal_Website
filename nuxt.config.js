@@ -32,12 +32,14 @@ export default {
   */
   css: [
     'normalize.css/normalize.css',
+    '@fortawesome/fontawesome-svg-core/styles.css',
     '@/assets/scss/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/fontawesome.js'
   ],
   /*
   ** Nuxt.js dev-modules

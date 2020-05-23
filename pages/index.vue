@@ -4,6 +4,15 @@
     <h1 class="main-head-text">Joey Cardosi</h1>
     <hr class="fancy-break">
     <h5 class="main-sub-text">Fullstack Developer &mdash; Wannabe Designer</h5>
+
+    <div class="links-wrap">
+      <a :href="githubURL" target="_blank" class="link">
+        <font-awesome-icon :icon="['fab', 'github']" />
+      </a>
+      <a :href="linkedinURL" target="_blank" class="link">
+        <font-awesome-icon :icon="['fab', 'linkedin']" />
+      </a>
+    </div>
   </div>
 </template>
 
@@ -11,8 +20,10 @@
   export default {
     data: function() {
       return {
-        current_month: (new Date()).getMonth() + 1,
-        // current_month: 12,  // testing/debugging
+        githubURL: "https://github.com/jcat4",
+        linkedinURL: "https://www.linkedin.com/in/joeycardosi/",
+        currentMonth: (new Date()).getMonth() + 1,
+        // currentMonth: 12,  // testing/debugging
       }
     },
     mounted: function() {
@@ -21,7 +32,7 @@
     },
     computed: {
       mainBackgroundColor: function() {
-        switch (this.current_month) {
+        switch (this.currentMonth) {
           case 2: // February
             return "background-pink";
           case 12: // December
@@ -33,7 +44,7 @@
       portrait_pic_url: function() {
         let filename;
 
-        switch (this.current_month) {
+        switch (this.currentMonth) {
           case 2: // February
             filename = "me-winking.svg";
             break;

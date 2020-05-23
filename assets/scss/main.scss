@@ -53,6 +53,17 @@
   font-family: Lato, Helvetica, Arial, sans-serif;
 }
 
+.links-wrap {
+  margin-top: 40px;
+  display: flex;
+
+  .link {
+    font-size: 40px;
+    color: white !important;
+    margin: 0 15px;
+  }
+}
+
 // MOBILE - TABLET TERRITORY
 
 @media(min-width: 350px) {
@@ -63,6 +74,14 @@
   .main-sub-text {
     font-size: 17px;
   }
+
+  .links-wrap {
+    margin-top: 50px;
+
+    .link {
+      font-size: 50px;
+    }
+  }
 }
 
 @media(min-width: 450px) {
@@ -72,6 +91,14 @@
 
   .main-sub-text {
     font-size: 20px;
+  }
+
+  .links-wrap {
+    margin-top: 40px;
+
+    .link {
+      font-size: 50px;
+    }
   }
 }
 
@@ -92,5 +119,14 @@
 
   .main-sub-text {
     font-size: 20px;
+  }
+
+  .links-wrap {
+    margin-top: 50px;
+    display: flex;
+
+    .link {
+      font-size: 45px;
+    }
   }
 }
