@@ -39,7 +39,11 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/fontawesome.js'
+    '~/plugins/fontawesome.js',
+    {
+      src: '~/plugins/GoogleAnalytics.js',
+      mode: 'client',
+    }
   ],
   /*
   ** Nuxt.js dev-modules

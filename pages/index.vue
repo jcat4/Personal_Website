@@ -30,6 +30,7 @@
       console.log('%cHow do you do, fellow developers?', 'font-size: 25px; color: purple; font-style: italic;');
       console.log("https://i.imgur.com/f6pnUrS.jpg");
     },
+    // TODO these aren't really working? I think they stay on whatever they compute on deploy. Is netlify caching something here??
     computed: {
       mainBackgroundColor: function() {
         switch (this.currentMonth) {
