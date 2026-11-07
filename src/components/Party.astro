@@ -1,0 +1,92 @@
+---
+import Sprite from './Sprite.astro';
+import { party } from '../data/site.js';
+---
+
+<section id="party">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>My party</h2>
+      <p>Six things I'm into. Click a sprite to check for shinies.</p>
+    </div>
+
+    <ul class="grid">
+      {party.map((p, i) => (
+        <li class={`card type-${p.type}`} style={`--i:${i}`}>
+          <div class="sprite-box"><Sprite id={p.id} scale={3} alt={p.name} /></div>
+          <div class="info">
+            <span class="badge">{p.type}</span>
+            <h3>{p.topic}</h3>
+            <p class="entry"><span class="dex">{p.name}</span> {p.entry}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(18.5rem, 1fr));
+  }
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1.1rem 1.25rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  li:hover {
+    transform: translate(-3px, -3px) rotate(-0.6deg);
+    box-shadow: 9px 9px 0 var(--shadow);
+  }
+  .sprite-box {
+    display: grid;
+    place-items: center;
+    background: color-mix(in srgb, var(--tint) 45%, #fff8ec);
+    border: 3px solid var(--line);
+    border-radius: 12px;
+  }
+  .sprite-box :global(img) {
+    cursor: pointer;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0 0.6rem;
+    font: 400 0.8rem var(--font-pixel);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1f2340;
+    background: var(--tint);
+    border: 2px solid var(--line);
+    border-radius: 999px;
+  }
+  h3 {
+    margin: 0.35rem 0 0.25rem;
+    font-size: 1.7rem;
+  }
+  .entry {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .dex {
+    font: 400 0.9rem var(--font-pixel);
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .dex::after {
+    content: ' —';
+  }
+  .type-normal { --tint: #d8d3b8; }
+  .type-electric { --tint: var(--yellow); }
+  .type-psychic { --tint: #ff9ec7; }
+  .type-ghost { --tint: var(--purple); }
+</style>

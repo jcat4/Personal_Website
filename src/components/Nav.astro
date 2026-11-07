@@ -1,0 +1,94 @@
+---
+import Sprite from './Sprite.astro';
+---
+
+<header class="nav">
+  <div class="wrap bar">
+    <a class="brand" href="#top">JOEY<span>.</span></a>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#party">Party</a>
+      <a href="#coffee">Coffee</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" type="button" aria-label="Switch between day and night" data-theme-toggle>
+      <img class="sprite day" src="/sprites/196.png" alt="" width="56" height="56" style="--scale:1" />
+      <img class="sprite night" src="/sprites/197.png" alt="" width="56" height="56" style="--scale:1" />
+    </button>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 3px solid var(--line);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    min-height: 3.6rem;
+  }
+  .brand {
+    font: 700 1.6rem var(--font-pixel);
+    text-decoration: none;
+    margin-right: auto;
+  }
+  .brand span {
+    color: var(--accent-2);
+  }
+  nav {
+    display: flex;
+    gap: 1.25rem;
+  }
+  nav a {
+    font-weight: 600;
+    text-decoration: none;
+    padding-block: 0.25rem;
+    border-bottom: 3px solid transparent;
+  }
+  nav a:hover {
+    border-color: var(--accent-2);
+  }
+  .theme {
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    background: var(--surface);
+    border: 3px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .theme img {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+  .theme:hover img {
+    animation: hop 0.4s steps(2) 2;
+  }
+  .night {
+    display: none;
+  }
+  :global(:root[data-theme='night']) .day {
+    display: none;
+  }
+  :global(:root[data-theme='night']) .night {
+    display: block;
+  }
+  @keyframes hop {
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  @media (max-width: 34rem) {
+    nav a:nth-child(n + 3) {
+      display: none;
+    }
+  }
+</style>

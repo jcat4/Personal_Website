@@ -1,0 +1,97 @@
+---
+import { profile } from '../data/site.js';
+
+const rows = [
+  ['NAME', profile.name.toUpperCase()],
+  ['CLASS', profile.title],
+  ['TEAM', profile.company],
+  ['HOME', profile.home],
+  ['SCHOOL', profile.school],
+];
+---
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Trainer card</h2>
+      <p>The short version.</p>
+    </div>
+
+    <div class="trainer card">
+      <img class="portrait" src="/me.svg" alt="Illustrated self-portrait of Joey" width="220" height="220" />
+      <dl>
+        {rows.map(([k, v]) => (<div><dt>{k}</dt><dd>{v}</dd></div>))}
+        <div>
+          <dt>YOUR TIME</dt>
+          <dd><time data-clock>--:--</time> <span data-daypart class="daypart"></span></dd>
+        </div>
+      </dl>
+    </div>
+    <p class="note">
+      Into optimization, design, and great user experience. I build for the whole stack, then sweat the pixels.
+    </p>
+  </div>
+</section>
+
+<style>
+  .trainer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.75rem;
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--accent) 25%, var(--surface)), var(--surface) 60%);
+  }
+  .portrait {
+    width: 13.75rem;
+    height: auto;
+    border: 3px solid var(--line);
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  dl {
+    margin: 0;
+    display: grid;
+    gap: 0.35rem;
+  }
+  dl div {
+    display: flex;
+    gap: 1rem;
+    align-items: baseline;
+    border-bottom: 2px dashed color-mix(in srgb, var(--ink) 25%, transparent);
+    padding-bottom: 0.35rem;
+  }
+  dt {
+    flex: 0 0 7rem;
+    font: 400 1.05rem var(--font-pixel);
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  dd {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  .daypart {
+    color: var(--accent-2);
+    font: 400 1rem var(--font-pixel);
+  }
+  .note {
+    max-width: 40rem;
+    margin: 2rem 0 0;
+    color: var(--muted);
+  }
+  @media (max-width: 40rem) {
+    .trainer {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    dl {
+      width: 100%;
+    }
+    dt {
+      flex-basis: 5.5rem;
+    }
+  }
+</style>

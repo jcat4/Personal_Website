@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+import { links } from '../data/site.js';
+---
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Say hi</h2>
+    <p>Want to talk shop, cats, or Johto? LinkedIn is the best way to reach me.</p>
+    <div class="actions">
+      <a class="btn" href={links.linkedin} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>
+      <a class="btn alt" href={links.github} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>
+    </div>
+    <p class="fine">
+      Sprites from Pokémon Crystal &copy; Nintendo / Game Freak / Creatures. Fan site, not affiliated.
+      Psst: try &uarr; &uarr; &darr; &darr; &larr; &rarr; &larr; &rarr; B A.
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    margin-top: 2rem;
+    padding-block: 4rem 3rem;
+    border-top: 3px solid var(--line);
+    background: var(--surface);
+  }
+  footer p {
+    max-width: 38rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-block: 1.5rem 2.5rem;
+  }
+  .fine {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+</style>

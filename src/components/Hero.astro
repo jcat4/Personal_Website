@@ -1,0 +1,208 @@
+---
+import Icon from './Icon.astro';
+import { profile, links } from '../data/site.js';
+---
+
+<section id="top" class="hero">
+  <div class="wrap top">
+   <div class="copy">
+    <p class="dialog card" aria-live="polite">
+      <span data-typewriter data-text="A wild JOEY appeared!">A wild JOEY appeared!</span>
+      <span class="caret" aria-hidden="true">▼</span>
+    </p>
+    <h1>
+      Hi, I'm <span class="name">{profile.name.split(' ')[0]}</span>.
+    </h1>
+    <p class="lede">
+      {profile.title} at {profile.company}. {profile.blurb}
+    </p>
+    <div class="actions">
+      <a class="btn" href={links.github} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>
+      <a class="btn alt" href={links.linkedin} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>
+    </div>
+   </div>
+    <div class="art card" aria-hidden="true">
+      <img class="sprite eevee" src="/sprites/133.png" width="56" height="56" alt="" style="--scale:6" data-id="133" data-shiny />
+      <img class="sprite evo day" src="/sprites/196.png" width="56" height="56" alt="" style="--scale:3" />
+      <img class="sprite evo night" src="/sprites/197.png" width="56" height="56" alt="" style="--scale:3" />
+    </div>
+  </div>
+
+  <div class="ground" aria-hidden="true">
+    <button class="walker" type="button" tabindex="-1" data-pet title="Pet the Meowth">
+      <span class="flip"><span class="bob"><img class="sprite" src="/sprites/52.png" width="56" height="56" alt="" style="--scale:3" data-id="52" /></span></span>
+    </button>
+  </div>
+  <p class="sr-only">A Meowth pixel sprite wanders along the bottom of this section. Click it to pet it.</p>
+</section>
+
+<style>
+  .hero {
+    padding-block: 5rem 0;
+    overflow: hidden;
+  }
+  .top {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  @media (min-width: 62rem) {
+    .top {
+      grid-template-columns: 1fr auto;
+    }
+  }
+  .art {
+    position: relative;
+    display: none;
+    width: 22rem;
+    height: 22rem;
+    place-items: center;
+    background: color-mix(in srgb, var(--accent) 55%, #fff8ec);
+    border-radius: 50%;
+  }
+  @media (min-width: 62rem) {
+    .art {
+      display: grid;
+    }
+  }
+  .eevee {
+    cursor: pointer;
+    animation: bob 0.8s steps(1) infinite;
+  }
+  .evo {
+    position: absolute;
+    right: -1rem;
+    bottom: 1rem;
+    animation: bob 0.8s steps(1) infinite 0.4s;
+  }
+  .evo.night {
+    display: none;
+  }
+  :global(:root[data-theme='night']) .evo.day {
+    display: none;
+  }
+  :global(:root[data-theme='night']) .evo.night {
+    display: block;
+  }
+  .dialog {
+    display: inline-flex;
+    gap: 0.75rem;
+    margin: 0 0 1.75rem;
+    padding: 0.6rem 1.1rem;
+    font: 400 1.15rem var(--font-pixel);
+    letter-spacing: 0.04em;
+    min-height: 3rem;
+  }
+  .caret {
+    color: var(--accent-2);
+    animation: blink 0.9s steps(2) infinite;
+  }
+  h1 {
+    font-size: clamp(3.2rem, 11vw, 7.5rem);
+    letter-spacing: -0.01em;
+  }
+  .name {
+    color: var(--accent-2);
+    background: linear-gradient(transparent 62%, color-mix(in srgb, var(--accent) 70%, transparent) 62%);
+  }
+  .lede {
+    max-width: 36rem;
+    margin: 1.5rem 0 2rem;
+    font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+    color: var(--muted);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Meowth strolls back and forth along a strip of ground. */
+  .ground {
+    position: relative;
+    height: 4rem;
+    margin-top: calc(168px + 1.5rem); /* room for the walker above the line */
+    border-top: 3px solid var(--line);
+    background: repeating-linear-gradient(90deg, transparent 0 22px, color-mix(in srgb, var(--ink) 10%, transparent) 22px 24px);
+  }
+  .walker {
+    position: absolute;
+    bottom: calc(100% - 3px);
+    left: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    animation: walk 22s linear infinite alternate;
+  }
+  .walker:hover,
+  .walker.petted {
+    animation-play-state: paused;
+  }
+  .flip {
+    display: block;
+    animation: turn 44s step-end infinite;
+  }
+  .walker:hover .flip,
+  .walker.petted .flip {
+    animation-play-state: paused;
+  }
+  .bob {
+    display: block;
+    animation: bob 0.5s steps(1) infinite;
+  }
+  .walker .sprite {
+    display: block;
+  }
+  .heart {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 1.6rem;
+    color: var(--accent-2);
+    pointer-events: none;
+    animation: float 1s ease-out forwards;
+  }
+
+  @keyframes walk {
+    from {
+      left: 0;
+    }
+    to {
+      left: calc(100% - 168px);
+    }
+  }
+  @keyframes turn {
+    0% {
+      transform: scaleX(-1);
+    }
+    50% {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes bob {
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes float {
+    to {
+      transform: translate(var(--dx, 0), -4rem);
+      opacity: 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .walker {
+      left: calc(50% - 84px);
+      animation: none;
+    }
+    .flip {
+      animation: none;
+    }
+  }
+</style>

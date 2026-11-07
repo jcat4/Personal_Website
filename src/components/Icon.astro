@@ -1,0 +1,8 @@
+---
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+const icons = { github: faGithub, linkedin: faLinkedin };
+const [width, height, , , path] = icons[Astro.props.name].icon;
+---
+
+<svg viewBox={`0 0 ${width} ${height}`} aria-hidden="true"><path d={path}></path></svg>

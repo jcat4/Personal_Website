@@ -1,22 +1,13 @@
 # Personal_Website
 
-> My personal website!
-
-## Build Setup
+Joey Cardosi's personal site. Astro, plain CSS, a little vanilla JS, Gen 2 Pokémon sprites.
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # static output in dist/
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+- Content (name, links, "party" interests): `src/data/site.js`
+- Sprites: `public/sprites/` (Pokémon Crystal, from [PokeAPI/sprites](https://github.com/PokeAPI/sprites); swap any National Dex ID 1-251)
+- Interactions: `src/scripts/main.js`

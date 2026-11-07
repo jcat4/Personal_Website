@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Party from '../components/Party.astro';
+import Coffee from '../components/Coffee.astro';
+import Footer from '../components/Footer.astro';
+import { profile } from '../data/site.js';
+---
+
+<Base
+  title={`${profile.name} | ${profile.title}`}
+  description={`${profile.name} is a ${profile.title.toLowerCase()} at ${profile.company} in ${profile.home}. Cats, coffee, Pokémon, anime, and video games.`}
+>
+  <Nav />
+  <main>
+    <Hero />
+    <About />
+    <Party />
+    <Coffee />
+  </main>
+  <Footer />
+  <script>
+    import '../scripts/main.js';
+  </script>
+</Base>

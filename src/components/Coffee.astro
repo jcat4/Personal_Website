@@ -1,0 +1,114 @@
+---
+import Sprite from './Sprite.astro';
+---
+
+<section id="coffee">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Coffee break</h2>
+      <p>Snorlax is blocking the path. You know what to do.</p>
+    </div>
+
+    <div class="coffee card" data-coffee>
+      <div class="snorlax" data-snorlax>
+        <Sprite id={143} scale={4} alt="Snorlax" shiny={false} />
+        <span class="zzz" aria-hidden="true">Z z z</span>
+      </div>
+      <div class="panel">
+        <p class="dialog" aria-live="polite" data-coffee-msg>Snorlax is fast asleep.</p>
+        <div class="row">
+          <button class="btn alt" type="button" data-brew>
+            <svg viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true"><path d="M2 5h10v1h2v1h1v3h-1v1h-2v1h-1v1H4v-1H3v-1H2zm10 2v3h1V7zM4 1h1v2H4zm3 0h1v2H7zm3 0h1v2h-1z" /></svg>
+            Brew a cup
+          </button>
+          <p class="count"><strong data-coffee-count>0</strong> cups poured</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coffee {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 1.75rem;
+  }
+  .snorlax {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 0.5rem;
+    border: 3px solid var(--line);
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 30%, #fff8ec);
+  }
+  .snorlax :global(img) {
+    filter: saturate(0.4) brightness(0.8);
+    transition: filter 0.4s;
+  }
+  [data-awake='true'] :global(img) {
+    filter: none;
+    animation: wobble 0.6s steps(2) infinite;
+  }
+  .zzz {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.5rem;
+    font: 700 1.2rem var(--font-pixel);
+    color: var(--accent-2);
+    animation: drift 2s steps(4) infinite;
+  }
+  [data-awake='true'] .zzz {
+    visibility: hidden;
+  }
+  .dialog {
+    margin: 0 0 1.25rem;
+    padding: 0.8rem 1rem;
+    min-height: 3.6rem;
+    font: 400 1.2rem var(--font-pixel);
+    border: 3px solid var(--line);
+    border-radius: 10px;
+    background: var(--bg);
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .count {
+    margin: 0;
+    color: var(--muted);
+  }
+  .count strong {
+    font: 700 1.6rem var(--font-pixel);
+    color: var(--ink);
+  }
+  @keyframes drift {
+    to {
+      transform: translate(6px, -8px);
+      opacity: 0.2;
+    }
+  }
+  @keyframes wobble {
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+  @media (max-width: 40rem) {
+    .coffee {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
+    .panel {
+      width: 100%;
+    }
+  }
+</style>

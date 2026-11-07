@@ -1,0 +1,42 @@
+---
+import '@fontsource/pixelify-sans/400.css';
+import '@fontsource/pixelify-sans/700.css';
+import '@fontsource-variable/outfit';
+import '../styles/global.css';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="theme-color" content="#fff8ec" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14172b" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preload" as="image" href="/sprites/52.png" />
+    <!-- Set the theme before first paint: saved choice, else time of day (like Gen 2's clock). -->
+    <script is:inline>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var h = new Date().getHours();
+        document.documentElement.dataset.theme = saved || (h >= 6 && h < 18 ? 'day' : 'night');
+      })();
+    </script>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0BX98KXXYM"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-0BX98KXXYM');
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
