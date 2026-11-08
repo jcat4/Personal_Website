@@ -1,11 +1,12 @@
 export const profile = {
   name: 'Joey Cardosi',
-  title: 'Full stack developer',
+  title: 'Security',
+  background: 'Full stack developer',
   company: 'Shopify',
   home: 'Memphis, TN',
   school: 'University of Arkansas',
   intro:
-    'I build fast, well-designed software and care a lot about how it feels to use. Optimization, design, and great user experience are the things I keep coming back to.',
+    'I work in security, with a full stack developer background. I care about optimization, design, and great user experience, and I think secure software should be all three.',
   outside: ['Cats', 'Coffee', 'Anime'],
 };
 

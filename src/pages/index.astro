@@ -5,14 +5,15 @@ import { profile, links } from '../data/site.js';
 
 const details = [
   ['Role', `${profile.title}, ${profile.company}`],
+  ['Background', profile.background],
   ['Based in', profile.home],
   ['Education', profile.school],
 ];
 ---
 
 <Base
-  title={`${profile.name} | ${profile.title}`}
-  description={`${profile.name} is a ${profile.title.toLowerCase()} at ${profile.company} in ${profile.home}.`}
+  title={`${profile.name} | ${profile.title} at ${profile.company}`}
+  description={`${profile.name} works in ${profile.title.toLowerCase()} at ${profile.company} in ${profile.home}.`}
 >
   <main class="wrap">
     <header>
@@ -21,8 +22,8 @@ const details = [
 
     <section class="hero">
       <h1>
-        {profile.title} at {profile.company}, building things that are fast and{' '}
-        <em>a pleasure to use.</em>
+        I work in {profile.title.toLowerCase()} at {profile.company}, keeping things safe without making them{' '}
+        <em>hard to use.</em>
       </h1>
       <p class="intro">{profile.intro}</p>
     </section>
