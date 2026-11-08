@@ -1,27 +1,142 @@
 ---
 import Base from '../layouts/Base.astro';
-import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Party from '../components/Party.astro';
-import Coffee from '../components/Coffee.astro';
-import Footer from '../components/Footer.astro';
-import { profile } from '../data/site.js';
+import Icon from '../components/Icon.astro';
+import { profile, links } from '../data/site.js';
+
+const details = [
+  ['Role', `${profile.title}, ${profile.company}`],
+  ['Based in', profile.home],
+  ['Education', profile.school],
+];
 ---
 
 <Base
   title={`${profile.name} | ${profile.title}`}
-  description={`${profile.name} is a ${profile.title.toLowerCase()} at ${profile.company} in ${profile.home}. Cats, coffee, Pokémon, anime, and video games.`}
+  description={`${profile.name} is a ${profile.title.toLowerCase()} at ${profile.company} in ${profile.home}.`}
 >
-  <Nav />
-  <main>
-    <Hero />
-    <About />
-    <Party />
-    <Coffee />
+  <main class="wrap">
+    <header>
+      <span class="mark">{profile.name}</span>
+    </header>
+
+    <section class="hero">
+      <h1>
+        {profile.title} at {profile.company}, building things that are fast and{' '}
+        <em>a pleasure to use.</em>
+      </h1>
+      <p class="intro">{profile.intro}</p>
+    </section>
+
+    <section aria-labelledby="details-h">
+      <h2 id="details-h">Details</h2>
+      <dl>
+        {details.map(([k, v]) => (<div><dt>{k}</dt><dd>{v}</dd></div>))}
+      </dl>
+    </section>
+
+    <section aria-labelledby="outside-h">
+      <h2 id="outside-h">Outside of work</h2>
+      <ul class="tags">
+        {profile.outside.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
   </main>
-  <Footer />
-  <script>
-    import '../scripts/main.js';
-  </script>
+
+  <footer>
+    <div class="wrap">
+      <p>Say hello.</p>
+      <div class="actions">
+        <a class="btn" href={links.linkedin} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>
+        <a class="btn ghost" href={links.github} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>
+      </div>
+    </div>
+  </footer>
 </Base>
+
+<style>
+  header {
+    padding-block: 2rem;
+  }
+  .mark {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .hero {
+    padding-block: 5rem 4rem;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .intro {
+    max-width: 34rem;
+    margin: 1.75rem 0 0;
+    color: var(--muted);
+    font-size: 1.15rem;
+  }
+  section + section {
+    padding-top: 3rem;
+  }
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  dl {
+    margin: 0;
+    border-top: 1px solid var(--line);
+  }
+  dl div {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1rem;
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--line);
+  }
+  dt {
+    color: var(--muted);
+  }
+  dd {
+    margin: 0;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tags li {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  footer {
+    margin-top: 6rem;
+    padding-block: 3rem 4rem;
+    border-top: 1px solid var(--line);
+  }
+  footer p {
+    margin: 0 0 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>

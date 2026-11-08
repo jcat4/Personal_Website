@@ -1,35 +1,25 @@
 :root {
-  --font-body: 'Outfit Variable', system-ui, sans-serif;
-  --font-pixel: 'Pixelify Sans', ui-monospace, monospace;
-
-  --teal: #5fc4b6;
-  --coral: #ff6b6b;
-  --yellow: #ffc40d;
-  --purple: #9b7bff;
-
-  --bg: #fff8ec;
-  --surface: #ffffff;
-  --ink: #1f2340;
-  --muted: #5d6280;
-  --line: #1f2340;
-  --shadow: #1f2340;
-  --accent: var(--teal);
-  --accent-2: var(--coral);
-
-  --radius: 14px;
-  --wrap: 68rem;
+  --bg: #fafaf9;
+  --ink: #111111;
+  --muted: #6b6b66;
+  --line: #e4e4e0;
+  --accent: #2b50d9;
+  --btn-bg: #111111;
+  --btn-ink: #fafaf9;
+  --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light dark;
 }
 
-:root[data-theme='night'] {
-  --bg: #14172b;
-  --surface: #1e2240;
-  --ink: #fff8ec;
-  --muted: #a7acd0;
-  --line: #fff8ec;
-  --shadow: #000000;
-  --accent: var(--yellow);
-  --accent-2: var(--purple);
-  color-scheme: dark;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e0e0d;
+    --ink: #f2f2ef;
+    --muted: #9a9a93;
+    --line: #262624;
+    --accent: #8aa2ff;
+    --btn-bg: #f2f2ef;
+    --btn-ink: #0e0e0d;
+  }
 }
 
 *,
@@ -39,49 +29,16 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* Subtle dot grid so the page isn't a flat field. */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: radial-gradient(color-mix(in srgb, var(--ink) 14%, transparent) 1.5px, transparent 1.5px);
-  background-size: 24px 24px;
-}
-
-img.sprite {
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  width: calc(56px * var(--scale, 3));
-  height: calc(56px * var(--scale, 3));
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-h1,
-h2,
-h3 {
-  font-family: var(--font-pixel);
-  line-height: 1.1;
-  margin: 0;
-}
-
-h2 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font: 400 1.0625rem/1.65 var(--font);
+  font-feature-settings: 'cv11', 'ss03';
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -89,113 +46,48 @@ a {
 }
 
 :focus-visible {
-  outline: 3px solid var(--accent-2);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .wrap {
-  width: min(100% - 2.5rem, var(--wrap));
+  width: min(100% - 3rem, 44rem);
   margin-inline: auto;
-}
-
-section {
-  padding-block: 4.5rem;
-}
-
-.section-head {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-
-.section-head p {
-  margin: 0;
-  color: var(--muted);
-}
-
-/* Shared chunky card look. */
-.card {
-  background: var(--surface);
-  border: 3px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: 6px 6px 0 var(--shadow);
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  font: 700 1.05rem var(--font-body);
+  gap: 0.55rem;
+  padding: 0.65rem 1.1rem;
+  font: 500 0.95rem var(--font);
   text-decoration: none;
-  padding: 0.7rem 1.2rem;
-  color: #1f2340;
-  background: var(--accent);
-  border: 3px solid var(--line);
+  color: var(--btn-ink);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
   border-radius: 999px;
-  box-shadow: 4px 4px 0 var(--shadow);
-  cursor: pointer;
-  transition: transform 0.12s, box-shadow 0.12s;
+  transition: opacity 0.15s;
 }
 
 .btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0 var(--shadow);
+  opacity: 0.82;
 }
 
-.btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 1px 1px 0 var(--shadow);
+.btn.ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line);
+  transition: border-color 0.15s;
 }
 
-.btn.alt {
-  background: var(--accent-2);
-  color: #fff;
+.btn.ghost:hover {
+  opacity: 1;
+  border-color: var(--ink);
 }
 
 .btn svg {
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.1em;
+  height: 1.1em;
   fill: currentColor;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
-/* Falling sprites for the Konami code. */
-.rain {
-  position: fixed;
-  top: -64px;
-  z-index: 100;
-  pointer-events: none;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform: translateY(calc(100vh + 128px)) rotate(var(--spin, 0deg));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
-  .rain {
-    display: none;
-  }
 }
