@@ -6,7 +6,7 @@ export const profile = {
   home: 'Memphis, TN',
   school: 'University of Arkansas',
   intro:
-    "Full stack developer by background, security by trade. I sweat the details (performance, design, how things feel to use) and I think secure software should get all three right.",
+    "Good security is the kind you never notice. I build software for the people who make that happen, and I care a lot about making it fast and easy to use.",
   outside: ['Cats', 'Coffee (a lot of it)', 'Anime'],
 };
 

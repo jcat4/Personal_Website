@@ -4,8 +4,8 @@ import Icon from '../components/Icon.astro';
 import { profile, links } from '../data/site.js';
 
 const details = [
-  ['Role', `${profile.title}, ${profile.company}`],
-  ['Background', profile.background],
+  ['Role', `${profile.background}, ${profile.title.toLowerCase()}`],
+  ['Company', profile.company],
   ['Based in', profile.home],
   ['Education', profile.school],
 ];
