@@ -6,8 +6,8 @@ export const profile = {
   home: 'Memphis, TN',
   school: 'University of Arkansas',
   intro:
-    'I work in security, with a full stack developer background. I care about optimization, design, and great user experience, and I think secure software should be all three.',
-  outside: ['Cats', 'Coffee', 'Anime'],
+    "Full stack developer by background, security by trade. I sweat the details (performance, design, how things feel to use) and I think secure software should get all three right.",
+  outside: ['Cats', 'Coffee (a lot of it)', 'Anime'],
 };
 
 export const links = {
