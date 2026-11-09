@@ -1,22 +1,11 @@
 # Personal_Website
 
-> My personal website!
-
-## Build Setup
+Joey Cardosi's personal site. Astro, plain CSS, no client JS (just analytics).
 
 ```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # static output in dist/
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Content lives in `src/data/site.js`.

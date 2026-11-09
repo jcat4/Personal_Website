@@ -1,0 +1,252 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+import { profile, links } from '../data/site.js';
+
+const yearsSince = (iso, now = new Date()) => {
+  const d = new Date(iso);
+  let y = now.getFullYear() - d.getFullYear();
+  if (now.getMonth() < d.getMonth()) y--;
+  return y;
+};
+const years = yearsSince(profile.careerStart);
+
+const details = [
+  ['Role', `${profile.background}, ${profile.title.toLowerCase()}`],
+  ['Company', profile.company],
+  ['Based in', profile.home],
+  ['Experience', null],
+];
+---
+
+<Base
+  title={`${profile.name} | ${profile.title} at ${profile.company}`}
+  description={`${profile.name} works in ${profile.title.toLowerCase()} at ${profile.company} in ${profile.home}.`}
+>
+  <main class="wrap">
+    <header>
+      <span class="mark">{profile.name}</span>
+      <button class="theme" type="button" data-theme-toggle aria-label="Toggle light and dark mode">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" /></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+      </button>
+    </header>
+
+    <section class="hero">
+      <h1>
+        <span class="hello">Hi, I'm {profile.name.split(' ')[0]} <span class="wave" aria-hidden="true">👋</span></span>
+        I work in {profile.title.toLowerCase()} at {profile.company}, keeping things safe without making them{' '}
+        <em>hard to use.</em>
+      </h1>
+      <p class="intro">{profile.intro}</p>
+    </section>
+
+    <section aria-labelledby="details-h">
+      <h2 id="details-h">The quick version</h2>
+      <dl>
+        {details.map(([k, v]) => (<div><dt>{k}</dt><dd>{v ?? <><span data-years={profile.careerStart}>{years}</span> years building software</>}</dd></div>))}
+      </dl>
+    </section>
+
+    <section aria-labelledby="outside-h">
+      <h2 id="outside-h">When I'm off the clock</h2>
+      <ul class="tags">
+        {profile.outside.map(([emoji, label]) => <li><span aria-hidden="true">{emoji}</span> {label}</li>)}
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Say hi! <span class="wave" aria-hidden="true">👋</span></p>
+      <p class="sub">Happy to talk security, design, or cats. Mostly cats.</p>
+      <div class="actions">
+        <a class="btn" href={links.linkedin} target="_blank" rel="noopener"><Icon name="linkedin" /> LinkedIn</a>
+        <a class="btn ghost" href={links.github} target="_blank" rel="noopener"><Icon name="github" /> GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script is:inline>
+    // Toggle flips what's currently showing (OS preference unless a choice is saved).
+    document.querySelector('[data-theme-toggle]').addEventListener('click', function () {
+      var root = document.documentElement;
+      var dark = root.dataset.theme
+        ? root.dataset.theme === 'dark'
+        : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      localStorage.setItem('theme', root.dataset.theme);
+    });
+  </script>
+  <script is:inline>
+    // Keep the year count current between deploys.
+    document.querySelectorAll('[data-years]').forEach(function (el) {
+      var s = new Date(el.dataset.years), n = new Date();
+      var y = n.getFullYear() - s.getFullYear();
+      if (n.getMonth() < s.getMonth()) y--;
+      el.textContent = y;
+    });
+  </script>
+</Base>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+  }
+  .theme {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .theme:hover {
+    border-color: var(--ink);
+  }
+  .theme svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  /* Show the icon for the mode you'd switch to. */
+  .sun {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .sun {
+      display: block;
+    }
+    :global(:root:not([data-theme='light'])) .moon {
+      display: none;
+    }
+  }
+  :global(:root[data-theme='dark']) .sun {
+    display: block;
+  }
+  :global(:root[data-theme='dark']) .moon {
+    display: none;
+  }
+  .mark {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave 2.4s ease-in-out 0.5s 2;
+  }
+  .hello:hover .wave,
+  footer p:hover .wave {
+    animation: wave 1s ease-in-out;
+  }
+  @keyframes wave {
+    0%, 60%, 100% { transform: rotate(0); }
+    10%, 30% { transform: rotate(16deg); }
+    20%, 40% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wave { animation: none !important; }
+  }
+  .hero {
+    padding-block: 5rem 4rem;
+  }
+  h1 {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+  .hello {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .intro {
+    max-width: 34rem;
+    margin: 1.75rem 0 0;
+    color: var(--muted);
+    font-size: 1.15rem;
+  }
+  section + section {
+    padding-top: 3rem;
+  }
+  h2 {
+    margin: 0 0 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  dl {
+    margin: 0;
+    border-top: 1px solid var(--line);
+  }
+  dl div {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1rem;
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--line);
+  }
+  dt {
+    color: var(--muted);
+  }
+  dd {
+    margin: 0;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tags li {
+    padding: 0.3rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
+  footer {
+    margin-top: 6rem;
+    padding-block: 3rem 4rem;
+    border-top: 1px solid var(--line);
+  }
+  footer p {
+    margin: 0 0 1.25rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  footer p.sub {
+    margin: -0.5rem 0 1.25rem;
+    font-size: 1.0625rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    color: var(--muted);
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>

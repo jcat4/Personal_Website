@@ -1,0 +1,25 @@
+export const profile = {
+  name: 'Joey Cardosi',
+  title: 'Security',
+  background: 'Full stack developer',
+  company: 'Shopify',
+  home: 'Memphis, TN',
+  // Summer 2015: first developer internship. Full-time since fall 2017.
+  careerStart: '2015-06-01',
+  intro:
+    "Good security is the kind you never notice. I build software for the people who make that happen, and I care a lot about making it fast and easy to use.",
+  outside: [
+    ['🐱', 'Cats'],
+    ['☕', 'Coffee'],
+    ['📺', 'Anime'],
+    ['📚', 'Manga'],
+    ['🎮', 'Video games'],
+    ['🏋️', 'Weight lifting'],
+    ['🏃', 'Running'],
+  ],
+};
+
+export const links = {
+  github: 'https://github.com/jcat4',
+  linkedin: 'https://www.linkedin.com/in/joeycardosi/',
+};

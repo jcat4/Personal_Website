@@ -1,32 +1,18 @@
 {
-  "name": "Personal_Website",
-  "version": "1.0.0",
-  "description": "My personal website!",
+  "name": "personal-website",
+  "version": "2.0.0",
+  "description": "Joey Cardosi's personal website",
   "author": "Joey Cardosi",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@fortawesome/free-brands-svg-icons": "^5.13.0",
-    "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "@fortawesome/vue-fontawesome": "^0.1.9",
-    "node-sass": "^4.14.1",
-    "normalize.css": "^8.0.1",
-    "nuxt": "^2.0.0",
-    "nuxt-fontawesome": "^0.4.0",
-    "nuxt-rfg-icon": "^0.6.4",
-    "sass-loader": "^8.0.2",
-    "vue-gtag": "^1.11.0"
-  },
-  "devDependencies": {
-    "@aceforth/nuxt-optimized-images": "^1.0.1",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fortawesome/free-brands-svg-icons": "^7.3.1",
+    "astro": "^7.4.7"
   }
 }

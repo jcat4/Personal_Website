@@ -1,0 +1,112 @@
+:root {
+  --bg: #fafaf9;
+  --ink: #111111;
+  --muted: #6b6b66;
+  --line: #e4e4e0;
+  --accent: #2b50d9;
+  --btn-bg: #111111;
+  --btn-ink: #fafaf9;
+  --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light dark;
+}
+
+/* Dark applies when the OS prefers it (unless light is forced) or when dark is forced. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0e0e0d;
+    --ink: #f2f2ef;
+    --muted: #9a9a93;
+    --line: #262624;
+    --accent: #8aa2ff;
+    --btn-bg: #f2f2ef;
+    --btn-ink: #0e0e0d;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0e0e0d;
+  --ink: #f2f2ef;
+  --muted: #9a9a93;
+  --line: #262624;
+  --accent: #8aa2ff;
+  --btn-bg: #f2f2ef;
+  --btn-ink: #0e0e0d;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 var(--font);
+  font-feature-settings: 'cv11', 'ss03';
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.wrap {
+  width: min(100% - 3rem, 44rem);
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.1rem;
+  font: 500 0.95rem var(--font);
+  text-decoration: none;
+  color: var(--btn-ink);
+  background: var(--btn-bg);
+  border: 1px solid var(--btn-bg);
+  border-radius: 999px;
+  transition: opacity 0.15s;
+}
+
+.btn:hover {
+  opacity: 0.82;
+}
+
+.btn.ghost {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line);
+  transition: border-color 0.15s;
+}
+
+.btn.ghost:hover {
+  opacity: 1;
+  border-color: var(--ink);
+}
+
+.btn svg {
+  width: 1.1em;
+  height: 1.1em;
+  fill: currentColor;
+}
