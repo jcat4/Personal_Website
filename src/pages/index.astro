@@ -47,7 +47,7 @@ const details = [
     <section aria-labelledby="outside-h">
       <h2 id="outside-h">When I'm off the clock</h2>
       <ul class="tags">
-        {profile.outside.map((item) => <li>{item}</li>)}
+        {profile.outside.map(([emoji, label]) => <li><span aria-hidden="true">{emoji}</span> {label}</li>)}
       </ul>
     </section>
   </main>

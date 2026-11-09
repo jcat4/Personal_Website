@@ -8,7 +8,15 @@ export const profile = {
   careerStart: '2015-06-01',
   intro:
     "Good security is the kind you never notice. I build software for the people who make that happen, and I care a lot about making it fast and easy to use.",
-  outside: ['Cats', 'Coffee (a lot of it)', 'Anime'],
+  outside: [
+    ['🐱', 'Cats'],
+    ['☕', 'Coffee'],
+    ['📺', 'Anime'],
+    ['📚', 'Manga'],
+    ['🎮', 'Video games'],
+    ['🏋️', 'Weight lifting'],
+    ['🏃', 'Running'],
+  ],
 };
 
 export const links = {
