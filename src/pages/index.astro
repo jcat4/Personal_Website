@@ -26,6 +26,10 @@ const details = [
   <main class="wrap">
     <header>
       <span class="mark">{profile.name}</span>
+      <button class="theme" type="button" data-theme-toggle aria-label="Toggle light and dark mode">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" /><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8" /></svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" /></svg>
+      </button>
     </header>
 
     <section class="hero">
@@ -63,6 +67,17 @@ const details = [
     </div>
   </footer>
   <script is:inline>
+    // Toggle flips what's currently showing (OS preference unless a choice is saved).
+    document.querySelector('[data-theme-toggle]').addEventListener('click', function () {
+      var root = document.documentElement;
+      var dark = root.dataset.theme
+        ? root.dataset.theme === 'dark'
+        : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      localStorage.setItem('theme', root.dataset.theme);
+    });
+  </script>
+  <script is:inline>
     // Keep the year count current between deploys.
     document.querySelectorAll('[data-years]').forEach(function (el) {
       var s = new Date(el.dataset.years), n = new Date();
@@ -75,7 +90,53 @@ const details = [
 
 <style>
   header {
-    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+  }
+  .theme {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .theme:hover {
+    border-color: var(--ink);
+  }
+  .theme svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  /* Show the icon for the mode you'd switch to. */
+  .sun {
+    display: none;
+  }
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme='light'])) .sun {
+      display: block;
+    }
+    :global(:root:not([data-theme='light'])) .moon {
+      display: none;
+    }
+  }
+  :global(:root[data-theme='dark']) .sun {
+    display: block;
+  }
+  :global(:root[data-theme='dark']) .moon {
+    display: none;
   }
   .mark {
     font-weight: 600;

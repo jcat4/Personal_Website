@@ -17,6 +17,13 @@ const { title, description } = Astro.props;
     <meta name="theme-color" content="#fafaf9" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Apply a saved choice before first paint; with none saved, CSS follows the OS. -->
+    <script is:inline>
+      (function () {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      })();
+    </script>
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-0BX98KXXYM"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
