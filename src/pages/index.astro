@@ -3,11 +3,19 @@ import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import { profile, links } from '../data/site.js';
 
+const yearsSince = (iso, now = new Date()) => {
+  const d = new Date(iso);
+  let y = now.getFullYear() - d.getFullYear();
+  if (now.getMonth() < d.getMonth()) y--;
+  return y;
+};
+const years = yearsSince(profile.careerStart);
+
 const details = [
   ['Role', `${profile.background}, ${profile.title.toLowerCase()}`],
   ['Company', profile.company],
   ['Based in', profile.home],
-  ['Education', profile.school],
+  ['Experience', null],
 ];
 ---
 
@@ -32,7 +40,7 @@ const details = [
     <section aria-labelledby="details-h">
       <h2 id="details-h">The quick version</h2>
       <dl>
-        {details.map(([k, v]) => (<div><dt>{k}</dt><dd>{v}</dd></div>))}
+        {details.map(([k, v]) => (<div><dt>{k}</dt><dd>{v ?? <><span data-years={profile.careerStart}>{years}</span> years building software</>}</dd></div>))}
       </dl>
     </section>
 
@@ -54,6 +62,15 @@ const details = [
       </div>
     </div>
   </footer>
+  <script is:inline>
+    // Keep the year count current between deploys.
+    document.querySelectorAll('[data-years]').forEach(function (el) {
+      var s = new Date(el.dataset.years), n = new Date();
+      var y = n.getFullYear() - s.getFullYear();
+      if (n.getMonth() < s.getMonth()) y--;
+      el.textContent = y;
+    });
+  </script>
 </Base>
 
 <style>
