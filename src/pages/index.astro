@@ -17,13 +17,14 @@ const details = [
 >
   <main class="wrap">
     <header>
-      <span class="mark">{profile.name} <span class="wave" aria-hidden="true">👋</span></span>
+      <span class="mark">{profile.name}</span>
     </header>
 
     <section class="hero">
       <h1>
-        Hi, I'm {profile.name.split(' ')[0]}. I work in {profile.title.toLowerCase()} at {profile.company}, keeping things{' '}
-        <em>safe</em> without making them hard to use.
+        <span class="hello">Hi, I'm {profile.name.split(' ')[0]} <span class="wave" aria-hidden="true">👋</span></span>
+        I work in {profile.title.toLowerCase()} at {profile.company}, keeping things safe without making them{' '}
+        <em>hard to use.</em>
       </h1>
       <p class="intro">{profile.intro}</p>
     </section>
@@ -68,7 +69,7 @@ const details = [
     transform-origin: 70% 70%;
     animation: wave 2.4s ease-in-out 0.5s 2;
   }
-  .mark:hover .wave,
+  .hello:hover .wave,
   footer p:hover .wave {
     animation: wave 1s ease-in-out;
   }
@@ -91,6 +92,10 @@ const details = [
     font-weight: 600;
     letter-spacing: -0.035em;
     text-wrap: balance;
+  }
+  .hello {
+    display: block;
+    margin-bottom: 0.5rem;
   }
   h1 em {
     font-style: normal;
